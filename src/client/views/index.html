@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>NLP</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__logo">NLP</div>
+    </header>
+
+    <main>
+      <section>
+        <form id="urlForm" class="form">
+          <input
+            id="name"
+            class="form__input"
+            type="text"
+            name="url"
+            placeholder="Enter URL"
+            required
+          />
+          <button id="submitButton" type="submit" class="form__btn">
+            Submit
+          </button>
+        </form>
+      </section>
+
+      <section class="results">
+        <strong class="results__title">Form Results:</strong>
+        <div id="results" class="results__content"></div>
+      </section>
+    </main>
+
+    <footer class="footer">© 2024 NLP. All rights reserved</footer>
+    <script type="module" src="../index.js"></script>
+  </body>
+</html>

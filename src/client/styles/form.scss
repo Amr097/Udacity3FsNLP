@@ -1,0 +1,38 @@
+.form {
+  background-color: $grey-color;
+  box-shadow: $light-box-shadow;
+  border-radius: 1rem;
+  padding: 4rem;
+  width: 75%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  align-items: center;
+  gap: 1rem;
+
+  &__input {
+    padding: 1.4rem 2rem;
+    width: 75%;
+    line-height: 16px;
+    margin: 1rem 0;
+
+    border-radius: 1rem;
+  }
+
+  &__btn {
+    background-color: $white-color;
+    padding: 1rem 1.8rem;
+    opacity: 0.95;
+    transform: translateY(0);
+    transition: all 0.35s ease-in-out;
+    cursor: pointer;
+    width: fit-content;
+    justify-self: flex-start;
+    border-radius: 1rem;
+
+    &:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+  }
+}

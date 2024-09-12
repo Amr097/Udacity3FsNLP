@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+
+  &__logo {
+    font-size: $text-xl;
+  }
+}
