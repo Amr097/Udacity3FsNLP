@@ -13,7 +13,7 @@ async function handleSubmit(event) {
   const formText = document.getElementById("name").value;
 
   // Check if the URL is valid
-  if (checkForUrl(formText)) {
+  if (await checkForUrl(formText)) {
     try {
       // Send the URL to the server
       const response = await fetch(process.env.SERVER_URL, {
@@ -26,7 +26,9 @@ async function handleSubmit(event) {
 
       // Check if the response is ok
       if (!response.ok) {
-        throw new Error(`Failed to get the data from the server`);
+        throw new Error(
+          `Failed to retrieve data, either broken url or server failure.`
+        );
       }
 
       // Parse the JSON response
@@ -41,8 +43,6 @@ async function handleSubmit(event) {
       // If URL is not valid, show an error
       document.getElementById("results").innerHTML = `Error: ${error.message}`;
     }
-  } else {
-    document.getElementById("results").innerHTML = "Please enter a valid URL.";
   }
 }
 

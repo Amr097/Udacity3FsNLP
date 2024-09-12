@@ -50,20 +50,6 @@ describe("handleSubmit", () => {
     );
   });
 
-  test("should display error message when URL is invalid", async () => {
-    // Mocking checkForUrl to return false
-    checkForUrl.mockReturnValue(false);
-
-    // Mocking the input value
-    document.getElementById("name").value = "invalid-url";
-
-    await handleSubmit({ preventDefault: jest.fn() });
-
-    expect(document.getElementById("results").innerHTML).toBe(
-      "Please enter a valid URL."
-    );
-  });
-
   test("should display error message when server response is not ok", async () => {
     // Mocking checkForUrl to return true
     checkForUrl.mockReturnValue(true);
@@ -79,7 +65,7 @@ describe("handleSubmit", () => {
     await handleSubmit({ preventDefault: jest.fn() });
 
     expect(document.getElementById("results").innerHTML).toBe(
-      "Error: Failed to get the data from the server"
+      "Error: Failed to retrieve data, either broken url or server failure."
     );
   });
 

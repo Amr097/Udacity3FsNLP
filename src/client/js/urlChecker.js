@@ -1,10 +1,11 @@
 async function checkForUrl(url) {
   try {
     // Check if url is valid
-    if (!isValidUrl(url)) {
+    if (isValidUrl(url)) {
+      return url;
+    } else {
       throw new Error("Invalid URL format");
     }
-    return url;
   } catch (error) {
     console.error("Error:", error.message);
     document.getElementById("results").innerHTML = error.message;
